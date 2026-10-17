@@ -32,6 +32,15 @@ jobs:
         with:
           gradle-version: '9.7.1'
 
+      - name: Create Android debug keystore
+        run: |
+          keytool -genkeypair -v \
+            -keystore android-app/debug.keystore \
+            -storepass android -alias androiddebugkey \
+            -keypass android \
+            -dname "CN=Android Debug,O=Android,C=US" \
+            -keyalg RSA -keysize 2048 -validity 10000
+
       - name: Build debug APK
         run: gradle --no-daemon -p android-app assembleDebug
 
