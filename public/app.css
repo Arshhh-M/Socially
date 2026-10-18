@@ -27,28 +27,17 @@ body {
   background-color: var(--bg-dark);
   color: var(--text-main);
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
   overflow-x: hidden;
 }
 
 #app-container {
   width: 100%;
-  max-width: 520px;
+  max-width: none;
   min-height: 100vh;
   background: var(--bg-surface);
-  border-left: 1px solid var(--border);
-  border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 0 50px rgba(0,0,0,0.6);
-}
-
-@media (min-width: 900px) {
-  #app-container {
-    max-width: 600px;
-  }
 }
 
 /* Header */
